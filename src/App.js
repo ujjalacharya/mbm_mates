@@ -28,10 +28,10 @@ class App extends Component {
         const filteredMates = this.state.mates.filter((mate) => {
             return mate.name.toLowerCase().includes(this.state.searchField.toLowerCase());
         })
-        if (this.state.mates.length === 0) { return <h1>Loading</h1> }
+        if (this.state.mates.length === 0) { return <h2>Loading...</h2> }
         return (
             <React.Fragment>
-                <h2 className="tc">MBM 2072</h2>
+                <h1 className="tc">MBM 2072</h1>
                 <SearchBar searchChange={this.handleSearch} />
                 <Scroll>
                 <CardList mates={filteredMates} />                    
