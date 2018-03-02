@@ -14,14 +14,17 @@ class App extends Component{
     }
    
     handleSearch = (event)=>{
-        console.log(event.target.value)
+        this.setState({searchField: event.target.value})
     }
     render(){
+        const filteredMates = this.state.mates.filter((mate)=>{
+            return mate.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+        })
         return(
             <React.Fragment>
                 <h2 className="tc">MBM 2072</h2>
                 <SearchBar searchChange={this.handleSearch}/>
-            <CardList mates={mates}/>
+            <CardList mates={filteredMates}/>
             </React.Fragment>
         )
     }
