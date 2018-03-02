@@ -4,7 +4,7 @@ class SearchBar extends Component{
     render(){
         return(
             <div className="pa2 tc">
-                <input className="pa3 ba b--green bg-lightest-blue" type="text" placeholder="Enter the name"/>
+                <input className="pa3 ba b--green bg-lightest-blue" type="text" placeholder="Enter the name" onChange={this.props.searchChange}/>
             </div>
         )
     }
